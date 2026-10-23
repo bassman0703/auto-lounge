@@ -1,0 +1,34 @@
+<footer class="site-footer" id="contact">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a class="footer__logo" routerLink="/">
+        <img src="/images/logo/logo.svg" alt="Auto Lounge" />
+      </a>
+      <p>
+        {{ language.current() === 'ka'
+          ? 'ზრუნვა დეტალებზე. შედეგი, რომელსაც ხედავ.'
+          : 'Attention to detail. Results you can see.' }}
+      </p>
+    </div>
+
+    <div class="footer-column">
+      <h3>{{ language.current() === 'ka' ? 'ნავიგაცია' : 'Explore' }}</h3>
+      <a href="#services">{{ language.current() === 'ka' ? 'სერვისები' : 'Services' }}</a>
+      <a href="#projects">{{ language.current() === 'ka' ? 'პროექტები' : 'Projects' }}</a>
+      <a href="#process">{{ language.current() === 'ka' ? 'პროცესი' : 'Process' }}</a>
+      <a href="#booking">{{ language.current() === 'ka' ? 'ჩაწერა' : 'Booking' }}</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>{{ language.current() === 'ka' ? 'კონტაქტი' : 'Contact' }}</h3>
+      <a href="tel:+995555000000">+995 555 00 00 00</a>
+      <a href="mailto:info@autolounge.ge">info&#64;autolounge.ge</a>
+      <span>თბილისი, საქართველო</span>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© {{ year }} Auto Lounge Detailing Studio</span>
+    <span class="footer-note">CARE IN EVERY DETAIL.</span>
+  </div>
+</footer>

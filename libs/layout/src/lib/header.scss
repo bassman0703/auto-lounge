@@ -1,0 +1,193 @@
+
+:host {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: block;
+}
+
+.site-header {
+  background: rgb(5 5 5 / 48%);
+  border-bottom: 1px solid rgb(255 255 255 / 12%);
+}
+
+.header-inner {
+  width: calc(100% - 12.5%);
+  min-height: 104px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  text-decoration: none;
+}
+
+.brand img {
+  display: block;
+  width: 238px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.navigation,
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.navigation {
+  justify-content: center;
+  gap: clamp(16px, 2.2vw, 38px);
+}
+
+.navigation a,
+.language-switch {
+  color: #c6c6c6;
+  font-size: 12px;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.navigation a:hover,
+.language-switch:hover {
+  color: #fff;
+}
+
+.header-actions {
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+.language-switch {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.header-booking {
+  min-height: 48px;
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: #fff;
+  background: #e20e17;
+  border: 1px solid #e20e17;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.header-booking:hover {
+  background: #bf0c13;
+}
+
+.menu-toggle {
+  display: none;
+  color: #fff;
+  background: none;
+  border: 0;
+  font-size: 24px;
+}
+
+@media (max-width: 1100px) {
+  .header-inner {
+    width: calc(100% - 48px);
+    gap: 18px;
+  }
+
+  .brand img {
+    width: 190px;
+  }
+
+  .navigation {
+    gap: 14px;
+  }
+
+  .navigation a {
+    font-size: 11px;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .header-inner {
+    min-height: 76px;
+    width: calc(100% - 40px);
+  }
+
+  .brand img {
+    width: 180px;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .navigation {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    padding: 16px 24px;
+    background: #101010;
+    border-bottom: 1px solid #303030;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .navigation.navigation-open {
+    display: flex;
+  }
+
+  .navigation a {
+    padding: 14px 0;
+    border-bottom: 1px solid #292929;
+    font-size: 13px;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .header-booking {
+    min-height: 40px;
+    padding: 0 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-inner {
+    width: calc(100% - 28px);
+    gap: 8px;
+  }
+
+  .brand img {
+    width: 145px;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .header-booking {
+    padding: 0 10px;
+    font-size: 11px;
+  }
+}

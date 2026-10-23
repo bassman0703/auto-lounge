@@ -1,0 +1,135 @@
+
+:host {
+  display: block;
+}
+
+.cta {
+  padding: 115px 24px 130px;
+  background: #141414;
+  color: #f4f1eb;
+  border-bottom: 1px solid #292929;
+}
+
+.cta__inner {
+  width: 100%;
+  max-width: 1250px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.cta__eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 0 0 30px;
+  color: #969696;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+}
+
+.cta__eyebrow span {
+  width: 25px;
+  height: 1px;
+  background: #ed1018;
+}
+
+.cta h2 {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: clamp(36px, 4vw, 58px);
+  font-weight: 300;
+  line-height: 1.35;
+  letter-spacing: -0.04em;
+}
+
+.cta__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.cta__button {
+  display: inline-flex;
+  min-height: 56px;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 0 27px;
+  font-size: 12px;
+  text-decoration: none;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.cta__button span {
+  font-size: 17px;
+}
+
+.cta__button--primary {
+  border: 1px solid #ed1018;
+  background: #ed1018;
+  color: #fff;
+}
+
+.cta__button--primary:hover {
+  border-color: #c80d14;
+  background: #c80d14;
+}
+
+.cta__button--outline {
+  border: 1px solid #858585;
+  background: transparent;
+  color: #fff;
+}
+
+.cta__button--outline:hover {
+  border-color: #fff;
+  background: rgb(255 255 255 / 5%);
+}
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 85px 20px 95px;
+  }
+
+  .cta h2 {
+    font-size: clamp(32px, 6vw, 44px);
+    line-height: 1.4;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .cta__actions {
+    gap: 12px;
+    margin-top: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta {
+    padding: 70px 20px 80px;
+  }
+
+  .cta h2 {
+    font-size: 32px;
+  }
+
+  .cta__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cta__button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

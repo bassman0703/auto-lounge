@@ -1,0 +1,50 @@
+<header class="site-header">
+  <div class="header-inner"><a class="brand" routerLink="/" (click)="closeMenu()">
+    <img src="/images/logo/logo.svg" alt="Auto Lounge" />
+  </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      [attr.aria-expanded]="menuOpen()"
+      aria-label="Toggle navigation"
+      (click)="toggleMenu()"
+    >
+      {{ menuOpen() ? '✕' : '☰' }}
+    </button>
+
+
+    <nav class="navigation" [class.navigation-open]="menuOpen()">
+      <a routerLink="/" (click)="closeMenu()">
+        {{ language.current() === 'ka' ? 'მთავარი' : 'Home' }}
+      </a>
+
+      <a routerLink="/services" (click)="closeMenu()">
+        {{ language.current() === 'ka' ? 'სერვისები' : 'Services' }}
+      </a>
+
+      <a routerLink="/projects" (click)="closeMenu()">
+        {{ language.current() === 'ka' ? 'პროექტები' : 'Projects' }}
+      </a>
+
+      <a routerLink="/journal" (click)="closeMenu()">Journal</a>
+
+      <a routerLink="/about" (click)="closeMenu()">
+        {{ language.current() === 'ka' ? 'ჩვენ შესახებ' : 'About' }}
+      </a>
+
+      <a routerLink="/contact" (click)="closeMenu()">
+        {{ language.current() === 'ka' ? 'კონტაქტი' : 'Contact' }}
+      </a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="language-switch" type="button" (click)="language.toggle()">
+        {{ language.current() === 'ka' ? 'EN' : 'ქარ' }}
+      </button>
+      <a class="button button-primary header-booking" href="#booking">
+        {{ language.current() === 'ka' ? 'ჩაეწერე' : 'Book now' }} <span>↗</span>
+      </a>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,25 @@
+
+<section class="process" id="process">
+  <div class="process__inner">
+    <p class="process__eyebrow">
+      <span></span>
+      PROCESS
+    </p>
+
+    <h2 class="process__title">როგორ ვმუშაობთ</h2>
+
+    <div class="process__grid">
+      @for (step of steps; track step.number) {
+        <article class="process-card">
+          <span class="process-card__number">
+            {{ step.number }}
+          </span>
+
+          <h3>{{ step.title }}</h3>
+
+          <p>{{ step.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

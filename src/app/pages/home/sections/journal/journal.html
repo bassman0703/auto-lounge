@@ -1,0 +1,53 @@
+
+<section class="journal" id="journal">
+  <div class="journal__inner">
+    <p class="journal__eyebrow">
+      <span></span>
+      JOURNAL
+    </p>
+
+    <div class="journal__heading">
+      <h2>რჩევები და სიახლეები</h2>
+
+      <a class="journal__all" routerLink="/journal">
+        ყველა სტატია
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="journal__grid">
+      @for (article of articles; track article.slug) {
+        <article class="journal-card">
+          <a
+            class="journal-card__image-link"
+            [routerLink]="['/journal', article.slug]"
+            [attr.aria-label]="article.title"
+          >
+            <img
+              class="journal-card__image"
+              [src]="article.image"
+              [alt]="article.title"
+              loading="lazy"
+            />
+          </a>
+
+          <div class="journal-card__meta">
+            <span>{{ article.category }}</span>
+            <span aria-hidden="true">·</span>
+            <span>{{ article.readTime }}</span>
+          </div>
+
+          <h3>
+            <a [routerLink]="['/journal', article.slug]">
+              {{ article.title }}
+            </a>
+          </h3>
+
+          <p class="journal-card__description">
+            {{ article.description }}
+          </p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
