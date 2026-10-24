@@ -1,0 +1,122 @@
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.service-cta {
+  width: 100%;
+  padding: 100px var(--page-gutter, 5.1vw);
+  background: #141414;
+  color: #f4f1eb;
+  border-bottom: 1px solid #292929;
+}
+
+.service-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+
+  width: 100%;
+  max-width: var(--page-max-width, 1600px);
+  margin-inline: auto;
+}
+
+.service-cta__inner h2 {
+  margin: 0;
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(38px, 4vw, 64px);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -1px;
+}
+
+.service-cta__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.service-cta__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  min-height: 58px;
+  padding: 0 28px;
+  border: 1px solid transparent;
+
+  color: #fff;
+  font-family: var(--font-main, sans-serif);
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    background 200ms ease,
+    border-color 200ms ease;
+}
+
+.service-cta__button span {
+  font-size: 18px;
+}
+
+.service-cta__button--primary {
+  background: var(--color-accent, #ed1018);
+  border-color: var(--color-accent, #ed1018);
+}
+
+.service-cta__button--primary:hover {
+  background: #c90d14;
+  border-color: #c90d14;
+}
+
+.service-cta__button--outline {
+  background: transparent;
+  border-color: #777;
+}
+
+.service-cta__button--outline:hover {
+  border-color: #f4f1eb;
+  background: #1b1b1b;
+}
+
+@media (max-width: 1100px) {
+  .service-cta__inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .service-cta__inner h2 {
+    font-size: clamp(36px, 5vw, 54px);
+  }
+}
+
+@media (max-width: 600px) {
+  .service-cta {
+    padding: 64px 20px;
+  }
+
+  .service-cta__inner h2 {
+    font-size: clamp(32px, 8vw, 42px);
+    letter-spacing: -0.5px;
+  }
+
+  .service-cta__actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .service-cta__button {
+    width: 100%;
+    min-height: 52px;
+    padding-inline: 18px;
+    white-space: normal;
+  }
+}

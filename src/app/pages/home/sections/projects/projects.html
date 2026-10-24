@@ -1,0 +1,80 @@
+
+<section class="home-projects" aria-labelledby="home-projects-title">
+  <div class="home-projects__inner">
+    <header class="home-projects__header">
+      <div>
+        <p class="home-projects__eyebrow">
+          <span></span>
+          PROJECTS
+        </p>
+
+        <h2 id="home-projects-title">მანამდე და შემდეგ</h2>
+      </div>
+
+      <a class="home-projects__all" routerLink="/projects">
+        ყველა პროექტი
+        <span aria-hidden="true">→</span>
+      </a>
+    </header>
+
+    <div
+      class="home-projects__comparison"
+      [style.--split]="splitPosition + '%'"
+      (pointermove)="onPointerMove($event)"
+      (pointerup)="onPointerUp()"
+      (pointercancel)="onPointerUp()"
+      (lostpointercapture)="onPointerUp()"
+    >
+      <img
+        class="home-projects__photo home-projects__photo--after"
+        [src]="project.afterImage"
+        [alt]="project.title + ' — პოლირების შემდეგ'"
+        draggable="false"
+      />
+
+      <div class="home-projects__before">
+        <img
+          class="home-projects__photo"
+          [src]="project.beforeImage"
+          [alt]="project.title + ' — პოლირებამდე'"
+          draggable="false"
+        />
+      </div>
+
+      <span class="home-projects__label home-projects__label--before">
+        BEFORE
+      </span>
+
+      <span class="home-projects__label home-projects__label--after">
+        AFTER
+      </span>
+
+      <div class="home-projects__divider">
+        <button
+          class="home-projects__handle"
+          type="button"
+          aria-label="შეადარე ფოტოები მარცხენა და მარჯვენა ისრებით"
+          [attr.aria-valuenow]="splitPosition"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          (pointerdown)="onPointerDown($event)"
+          (keydown)="onKeyMove($event)"
+        >
+          <span aria-hidden="true">‹</span>
+          <span aria-hidden="true">›</span>
+        </button>
+      </div>
+    </div>
+
+    <footer class="home-projects__footer">
+      <div class="home-projects__info">
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
+      </div>
+
+      <span class="home-projects__counter">
+        {{ project.current }} / {{ project.total }}
+      </span>
+    </footer>
+  </div>
+</section>

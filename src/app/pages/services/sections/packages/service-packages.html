@@ -1,0 +1,53 @@
+
+<section class="service-packages" id="packages">
+  <div class="service-packages__inner">
+    <header class="service-packages__heading">
+      <p class="service-packages__eyebrow">
+        <span></span>
+        PACKAGES
+      </p>
+
+      <h2>აირჩიეთ პაკეტი</h2>
+    </header>
+
+    <div class="service-packages__grid">
+      @for (pkg of packages; track pkg.name) {
+        <article
+          class="service-packages__card"
+          [class.service-packages__card--popular]="pkg.popular"
+        >
+          <div class="service-packages__card-header">
+            <span class="service-packages__name">{{ pkg.name }}</span>
+
+            @if (pkg.popular) {
+              <span class="service-packages__popular">POPULAR</span>
+            }
+          </div>
+
+          <p class="service-packages__price">{{ pkg.price }}</p>
+          <p class="service-packages__duration">{{ pkg.duration }}</p>
+
+          <ul class="service-packages__features">
+            @for (feature of pkg.features; track feature) {
+              <li>{{ feature }}</li>
+            }
+          </ul>
+
+          <a
+            class="service-packages__button"
+            routerLink="/contact"
+            [queryParams]="{ package: pkg.name }"
+          >
+            დაჯავშნა
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+      }
+    </div>
+
+    <p class="service-packages__note">
+      * ფასი დამოკიდებულია ავტომობილის ზომასა და საღებავის მდგომარეობაზე.
+      ზუსტ ფასს დაგიდასტურებთ შემოწმების შემდეგ.
+    </p>
+  </div>
+</section>

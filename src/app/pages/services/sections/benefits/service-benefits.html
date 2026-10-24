@@ -1,0 +1,76 @@
+
+<section class="service-benefits" aria-labelledby="service-benefits-title">
+  <div class="service-benefits__heading">
+    <p class="service-benefits__eyebrow">
+      <span></span>
+      BENEFITS
+    </p>
+
+    <h2 id="service-benefits-title">რატომ კერამიკა</h2>
+  </div>
+
+  <div class="service-benefits__cards">
+    <article class="service-benefits__card">
+      <h3>ღრმა ბზინვარება</h3>
+      <p>
+        შუშისებრი ეფექტი, რომელიც ფერს უფრო ღრმას და გაჯერებულს ხდის.
+      </p>
+    </article>
+
+    <article class="service-benefits__card">
+      <h3>ჰიდროფობიურობა</h3>
+      <p>
+        წყალი და ჭუჭყი ზედაპირზე ნაკლებად ჩერდება — მანქანა ადვილად ირეცხება.
+      </p>
+    </article>
+
+    <article class="service-benefits__card">
+      <h3>ხანგრძლივი დაცვა</h3>
+      <p>
+        სწორად მოვლის პირობებში იცავს ზედაპირს UV-სხივებისა და გარემოს
+        დამაბინძურებლების ზემოქმედებისგან.
+      </p>
+    </article>
+  </div>
+
+
+  <div
+    class="service-benefits__comparison"
+    [style.--split]="splitPosition + '%'"
+    (pointermove)="onPointerMove($event)"
+    (pointerup)="onPointerUp()"
+    (pointercancel)="onPointerUp()"
+    (pointerleave)="onPointerLeave($event)"
+  >
+    <div class="service-benefits__image service-benefits__image--before">
+      <img
+        src="/images/projects/porsche-before.jpg"
+        alt="საღებავი პოლირებამდე"
+        loading="lazy"
+      />
+      <span class="service-benefits__label">BEFORE</span>
+    </div>
+
+    <div class="service-benefits__image service-benefits__image--after">
+      <img
+        src="/images/projects/porsche-after.jpg"
+        alt="საღებავი პოლირების შემდეგ"
+        loading="lazy"
+      />
+      <span class="service-benefits__label">AFTER</span>
+    </div>
+
+    <div class="service-benefits__divider">
+      <button
+        class="service-benefits__handle"
+        type="button"
+        aria-label="Before და After ფოტოების შედარება"
+        (pointerdown)="onPointerDown($event)"
+        (keydown.arrowleft)="moveSplit(-3)"
+        (keydown.arrowright)="moveSplit(3)"
+      >
+        <span>‹</span><span>›</span>
+      </button>
+    </div>
+  </div>
+</section>

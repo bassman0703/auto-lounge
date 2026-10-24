@@ -1,0 +1,46 @@
+
+<section class="service-faq" aria-labelledby="service-faq-title">
+  <div class="service-faq__inner">
+    <div class="service-faq__heading">
+      <p class="service-faq__eyebrow">
+        <span></span>
+        FAQ
+      </p>
+
+      <h2 id="service-faq-title">
+        ხშირად დასმული
+        <br />
+        კითხვები
+      </h2>
+    </div>
+
+    <div class="service-faq__list">
+      @for (item of questions; track item.question; let i = $index) {
+        <article class="service-faq__item">
+          <button
+            class="service-faq__question"
+            type="button"
+            [attr.aria-expanded]="openIndex === i"
+            [attr.aria-controls]="'faq-answer-' + i"
+            (click)="toggle(i)"
+          >
+            <span>{{ item.question }}</span>
+
+            <span class="service-faq__icon" aria-hidden="true">
+              {{ openIndex === i ? '−' : '+' }}
+            </span>
+          </button>
+
+          @if (openIndex === i) {
+            <div
+              class="service-faq__answer"
+              [id]="'faq-answer-' + i"
+            >
+              <p>{{ item.answer }}</p>
+            </div>
+          }
+        </article>
+      }
+    </div>
+  </div>
+</section>
