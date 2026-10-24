@@ -15,9 +15,6 @@
 
 
     <nav class="navigation" [class.navigation-open]="menuOpen()">
-      <a routerLink="/" (click)="closeMenu()">
-        {{ language.current() === 'ka' ? 'მთავარი' : 'Home' }}
-      </a>
 
       <a routerLink="/services" (click)="closeMenu()">
         {{ language.current() === 'ka' ? 'სერვისები' : 'Services' }}
@@ -27,10 +24,11 @@
         {{ language.current() === 'ka' ? 'პროექტები' : 'Projects' }}
       </a>
 
-      <a routerLink="/journal" (click)="closeMenu()">Journal</a>
 
       <a routerLink="/about" (click)="closeMenu()">
         {{ language.current() === 'ka' ? 'ჩვენ შესახებ' : 'About' }}
+      </a>   <a routerLink="/about" (click)="closeMenu()">
+        {{ language.current() === 'ka' ? 'ბლოგი' : 'Blog' }}
       </a>
 
       <a routerLink="/contact" (click)="closeMenu()">
